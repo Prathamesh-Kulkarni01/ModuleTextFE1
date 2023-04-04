@@ -2,10 +2,18 @@
 <html>
   <head>
     <title>Responsive Divs Example</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
       body {
         background: #333333;
         height: 100vh;
+        font-family: "Inter", sans-serif;
       }
       nav {
         background-color: #333;
@@ -35,7 +43,13 @@
         background: #323025;
         border-radius: 50px;
       }
-
+      nav div button:hover {
+        width: 285px;
+        background-color: #b1a592;
+        color: #333333;
+        font-weight: 550;
+        height: 53px;
+      }
       nav button:last-child {
         margin-right: 0;
       }
@@ -60,14 +74,15 @@
         top: 99px;
         padding: 18px;
         display: flex;
+        overflow: hidden;
         flex-direction: column;
         background: #dfd6c5;
         border-radius: 30px;
       }
 
-      left-div .leftImg {
-        object-fit: contain;
-        height: 730px;
+      .left-div .leftImg {
+        object-fit: cover;
+        height: 713px;
       }
       .leftTopBtn {
         width: 207px;
@@ -81,6 +96,12 @@
         line-height: 24px;
         color: #323025;
       }
+      .leftTopBtn:hover {
+        width: 212px;
+        background-color: #323025;
+        color: white;
+        height: 40px;
+      }
       .leftTopText {
         font-style: normal;
         font-weight: 700;
@@ -91,12 +112,13 @@
       }
       .right-div {
         flex-grow: 1;
+        width: 40%;
         position: relative;
+        overflow: hidden;
         padding: 15px;
       }
 
       .top-div {
-        padding: 10px;
         margin-bottom: 10px;
         display: flex;
         position: relative;
@@ -104,9 +126,13 @@
         position: relative;
         background: #8e886d;
         border-radius: 30px;
+        overflow: hidden;
       }
-      .top-div div {
+      .top-div .top {
         display: flex;
+        padding: 12px;
+        flex-wrap: wrap;
+        position: relative;
         width: 100%;
       }
 
@@ -119,13 +145,13 @@
         flex-basis: 60%;
       }
       .rightTopBgDiv img {
-        min-width: 540px;
+        width: 90%;
         height: 280px;
         margin: 30px;
       }
-      .top-div .right-small-text {
+      .right-small-text {
         font-style: normal;
-        margin: 0px 10px;
+        margin: 4px 10px;
         font-weight: 400;
         font-size: 20px;
         padding: 0px;
@@ -133,40 +159,91 @@
       .getStartedWrapper {
         display: flex;
         padding: 10px;
+        border-top: 1px solid #333333;
+        width: 100%;
         justify-content: space-between;
       }
+
       .getStartedWrapper span {
         font-style: normal;
         font-weight: 400;
         margin: 10px;
+        padding: 2px 10px;
         font-size: 24px;
       }
       .bottom-div {
         display: flex;
         flex-wrap: wrap;
+        overflow: hidden;
       }
 
       .bottom-div div {
-        flex-grow: 1;
-        background-color: #bbb;
         padding: 10px;
         margin-right: 10px;
+        flex: wrap;
         margin-bottom: 10px;
         box-sizing: border-box;
       }
+      .bottomLeft {
+        width: 40%;
+        background: #916e58;
+        position: relative;
+        border-radius: 30px;
+      }
+      .contentHolder {
+        margin: 0px 10px;
+        padding: 0px;
+        margin-top: -20px;
+      }
 
-      @media only screen and (max-width: 1024px) {
+      .bottomLeftImg {
+        width: 100%;
+      }
+      .bottomLeftImg img {
+        width: 100%;
+      }
+      h2 {
+        font-weight: 700;
+        font-size: 36px;
+        margin: 15px 10px;
+        line-height: 40px;
+        text-decoration-line: underline;
+      }
+
+      .bottomRight {
+        width: 50%;
+        background: #b1a48e;
+        position: relative;
+        border-radius: 30px;
+      }
+      .bottomRight .leftTopBtn {
+        margin: 50px 10px 10px 10px;
+      }
+      .bottomRight .contentHolder {
+        margin-top: 38px;
+      }
+      .lastImg {
+        position: absolute;
+        width: 113px;
+        height: 113px;
+        border-radius: 50%;
+        right: 60px;
+        top: 70px;
+      }
+
+      @media only screen and (max-width: 1124px) {
         /* Mobile and Tablet view */
         .wrapper {
           flex-direction: column;
         }
 
         .left-div {
-          width: 100%;
+          min-width: 90vw;
         }
 
         .right-div {
           flex-grow: 0;
+          min-width: 90vw;
         }
 
         .bottom-div div {
@@ -191,17 +268,45 @@
           min-width: 20%;
         }
       }
+      @media only screen and (max-width: 600px) {
+        .bottom-div {
+          flex-direction: column;
+        }
+        .wrapper {
+          margin: 0;
+          width: 90vw;
+          padding: 0;
+        }
+        .left-div {
+          max-width: 75vw;
+        }
+        .right-div {
+          position: relative;
+          max-width: 90%;
+        }
+        .bottomRight {
+          position: relative;
+          min-width: 100%;
+        }
+        .bottomLeft {
+          min-width: 100%;
+        }
+        .rightTopBgDiv {
+          flex-basis: 100%;
+          margin-left: -10px;
+        }
+      }
     </style>
   </head>
   <body>
     <nav>
       <div>
-        <button>Button 1</button>
-        <button>Button 2</button>
-        <button>Button 3</button>
-        <button>Button 4</button>
+        <button>Company</button>
+        <button>Collections</button>
+        <button>Menu</button>
+        <button>Events</button>
       </div>
-      <button>Right Button</button>
+      <button>Contact</button>
     </nav>
     <div class="wrapper">
       <div class="left-div">
@@ -211,7 +316,7 @@
       </div>
       <div class="right-div">
         <div class="top-div">
-          <div>
+          <div class="top">
             <div class="LeftTopBgDiv">
               <button class="leftTopBtn">LOREUMIPSUM</button>
               <p class="leftTopText">Loreum Ipsum Heading</p>
@@ -229,17 +334,83 @@
               <img src="./assets/rightTopbg.png" />
             </div>
           </div>
+
           <div class="getStartedWrapper">
             <span>Get Started</span>
             <span>---></span>
           </div>
         </div>
         <div class="bottom-div">
-          <div>
-            <p>This is the first bottom div.</p>
+          <div class="bottomLeft">
+            <div class="bottomLeftImg">
+              <img src="./assets/bottomLeftbg.png" />
+            </div>
+            <div class="contentHolder">
+              <h2>Portrait</h2>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+            </div>
+            <div class="getStartedWrapper">
+              <span>Get Started</span>
+              <span>---></span>
+            </div>
           </div>
-          <div>
-            <p>This is the second bottom div.</p>
+
+          <div class="bottomRight">
+            <img class="lastImg" src="./assets/lastbg.png" />
+            <button class="leftTopBtn">LOREUMIPSUM</button>
+            <div class="contentHolder">
+              <h2>Portrait</h2>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+            </div>
+            <div class="getStartedWrapper">
+              <span>Get Started</span>
+              <span>---></span>
+            </div>
           </div>
         </div>
       </div>

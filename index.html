@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Responsive Divs Example</title>
+    <style>
+      body {
+        background: #333333;
+        height: 100vh;
+      }
+      nav {
+        background-color: #333;
+        color: white;
+        display: flex;
+        margin: 18px 19px;
+        justify-content: space-between;
+        border-radius: 50px;
+        border: 1px solid #b1a592;
+        box-sizing: border-box;
+        height: 63px;
+        align-items: center;
+        padding: 10px;
+      }
+      nav div {
+        width: 100%;
+        height: 50px;
+        overflow: hidden;
+      }
+      nav button {
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: 282px;
+        height: 50px;
+        left: 26px;
+        background: #323025;
+        border-radius: 50px;
+      }
+
+      nav button:last-child {
+        margin-right: 0;
+      }
+      nav div button:nth-child(2) {
+        color: #333333;
+        background-color: #b1a592;
+      }
+
+      .wrapper {
+        display: flex;
+        margin: 5px 18px;
+        flex-wrap: wrap;
+      }
+
+      .left-div {
+        width: 667px;
+        background-color: #eee;
+        max-height: 981px;
+        margin: 0px 9px;
+        max-width: 667px;
+        left: 35px;
+        top: 99px;
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        background: #dfd6c5;
+        border-radius: 30px;
+      }
+
+      left-div .leftImg {
+        object-fit: contain;
+        height: 730px;
+      }
+      .leftTopBtn {
+        width: 207px;
+        height: 34px;
+        margin-top: 20px;
+        background-color: transparent;
+        border: 1px solid #323025;
+        border-radius: 50px;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 24px;
+        color: #323025;
+      }
+      .leftTopText {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        margin: 14px 8px;
+        text-decoration-line: underline;
+        color: #333333;
+      }
+      .right-div {
+        flex-grow: 1;
+        position: relative;
+        padding: 15px;
+      }
+
+      .top-div {
+        padding: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        position: relative;
+        background: #8e886d;
+        border-radius: 30px;
+      }
+      .top-div div {
+        display: flex;
+        width: 100%;
+      }
+
+      .LeftTopBgDiv {
+        min-width: 35%;
+        display: flex;
+        flex-direction: column;
+      }
+      .rightTopBgDiv {
+        flex-basis: 60%;
+      }
+      .rightTopBgDiv img {
+        min-width: 540px;
+        height: 280px;
+        margin: 30px;
+      }
+      .top-div .right-small-text {
+        font-style: normal;
+        margin: 0px 10px;
+        font-weight: 400;
+        font-size: 20px;
+        padding: 0px;
+      }
+      .getStartedWrapper {
+        display: flex;
+        padding: 10px;
+        justify-content: space-between;
+      }
+      .getStartedWrapper span {
+        font-style: normal;
+        font-weight: 400;
+        margin: 10px;
+        font-size: 24px;
+      }
+      .bottom-div {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .bottom-div div {
+        flex-grow: 1;
+        background-color: #bbb;
+        padding: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+
+      @media only screen and (max-width: 1024px) {
+        /* Mobile and Tablet view */
+        .wrapper {
+          flex-direction: column;
+        }
+
+        .left-div {
+          width: 100%;
+        }
+
+        .right-div {
+          flex-grow: 0;
+        }
+
+        .bottom-div div {
+          flex-basis: calc(49% - 5px);
+        }
+        nav button {
+          display: none;
+        }
+        nav div {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          text-align: center;
+        }
+        nav button:first-child {
+          display: block;
+          min-width: 80%;
+        }
+
+        nav button:nth-child(3) {
+          display: block;
+          min-width: 20%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div>
+        <button>Button 1</button>
+        <button>Button 2</button>
+        <button>Button 3</button>
+        <button>Button 4</button>
+      </div>
+      <button>Right Button</button>
+    </nav>
+    <div class="wrapper">
+      <div class="left-div">
+        <button class="leftTopBtn">LOREUMIPSUM</button>
+        <p class="leftTopText">Loreum Ipsum Heading</p>
+        <img class="leftImg" src="./assets/leftbg.png" />
+      </div>
+      <div class="right-div">
+        <div class="top-div">
+          <div>
+            <div class="LeftTopBgDiv">
+              <button class="leftTopBtn">LOREUMIPSUM</button>
+              <p class="leftTopText">Loreum Ipsum Heading</p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+            </div>
+            <div class="rightTopBgDiv">
+              <img src="./assets/rightTopbg.png" />
+            </div>
+          </div>
+          <div class="getStartedWrapper">
+            <span>Get Started</span>
+            <span>---></span>
+          </div>
+        </div>
+        <div class="bottom-div">
+          <div>
+            <p>This is the first bottom div.</p>
+          </div>
+          <div>
+            <p>This is the second bottom div.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
